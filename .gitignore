@@ -40,3 +40,6 @@ backend/hs_err_pid*
 secrets/
 *.key
 *.pem
+
+# Staging Folders for Partitioning (Local Only)
+__PART*__/
