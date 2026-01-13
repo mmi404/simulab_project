@@ -1,3 +1,10 @@
+export interface GraphSimulationRequest {
+    algorithm: string;
+    start: string;
+    nodes: string[];
+    edges: string[][];
+}
+
 export interface Step {
     current: string | null;
     visited: string[];
@@ -7,11 +14,4 @@ export interface Step {
 export interface GraphSimulationResponse {
     order: string[];
     steps: Step[];
-}
-
-export interface GraphSimulationRequest {
-    algorithm: 'BFS' | 'DFS';
-    start: string;
-    nodes: string[];
-    edges: string[][]; // Array of [from, to]
 }
