@@ -69,6 +69,16 @@ export const detectDeadlock = async (processes: string[], resources: string[], e
     return response.data;
 };
 
+export const runBankersSafety = async (available: number[], allocation: Record<string, number[]>, max: Record<string, number[]>) => {
+    const payload = {
+        available,
+        allocation,
+        max
+    };
+    const response = await api.post('/simulate/bankers/safety', payload);
+    return response.data;
+};
+
 export const simulateGraphTraversal = async (request: GraphSimulationRequest): Promise<GraphSimulationResponse> => {
     const response = await api.post<GraphSimulationResponse>('/simulate/graph/traversal', request);
     return response.data;
